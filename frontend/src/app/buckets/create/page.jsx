@@ -13,7 +13,6 @@ import {Badge} from "@/components/ui/badge";
 
 export default function CreateBucket() {
     const [bucketName, setBucketName] = useState('piyush')
-    const [maxFileSize, setMaxFileSize] = useState(0)
     const [aclsEnabled, setAclsEnabled] = useState(false)
     const [blockAllPublicAccess, setBlockAllPublicAccess] = useState(true)
     const [blockNewAcls, setBlockNewAcls] = useState(true)
@@ -29,20 +28,23 @@ export default function CreateBucket() {
 
                 <div className="space-y-4">
                     <div className="space-y-2">
-                        <Label htmlFor="bucket-name">Bucket Name*</Label>
+                        <Label htmlFor="bucket-name"><b>Bucket Name*</b></Label>
                         <Input
                             id="bucket-name"
                             value={bucketName}
                             onChange={(e) => setBucketName(e.target.value)}
                         />
-                        <Label htmlFor="bucket-name">Maximum File Size (kb)*</Label>
-                        <Input
-                            id="bucket-name"
-                            type={"number"}
-                            value={bucketName}
-                            onChange={(e) => setBucketName(e.target.value)}
-                            className={"mt-2"}
-                        />
+
+                        <div className={"mt-2"}>
+                            <Label htmlFor="bucket-name"><b>Maximum File Size (kb)*</b></Label>
+                            <Input
+                                id="bucket-name"
+                                type={"number"}
+                                value={bucketName}
+                                onChange={(e) => setBucketName(e.target.value)}
+                                className={"mt-2"}
+                            />
+                        </div>
 
                         {/*show this when validation fails*/}
                         {/*<Alert variant="success" className="bg-red-50 text-red-600 border-red-200">*/}
@@ -60,7 +62,7 @@ export default function CreateBucket() {
                     </div>
 
                     <div className="space-y-2">
-                        <Label>AWS Region</Label>
+                        <Label><b>AWS Region</b></Label>
                         <Select defaultValue="ap-south-1">
                             <SelectTrigger>
                                 <SelectValue placeholder="Select a region"/>
@@ -73,6 +75,7 @@ export default function CreateBucket() {
                         </Select>
                     </div>
 
+
                     <div className="space-y-2">
                         <Label className="flex items-center gap-2">
                             Copy settings from existing bucket
@@ -82,6 +85,27 @@ export default function CreateBucket() {
                         <p className="text-sm text-muted-foreground">
                             Only the bucket settings in the following configuration are copied.
                         </p>
+                    </div>
+
+                    <div className={"mt-2"}>
+                        <Label htmlFor="bucket-name"><b>Client Secret Key</b></Label>
+                        <Input
+                            id="bucket-name"
+                            type={"text"}
+                            value={bucketName}
+                            onChange={(e) => setBucketName(e.target.value)}
+                            className={"mt-2"}
+                        />
+                    </div>
+                    <div className={"mt-2"}>
+                        <Label htmlFor="bucket-name"><b>Secret Key</b></Label>
+                        <Input
+                            id="bucket-name"
+                            type={"text"}
+                            value={bucketName}
+                            onChange={(e) => setBucketName(e.target.value)}
+                            className={"mt-2"}
+                        />
                     </div>
                 </div>
             </div>
@@ -247,12 +271,6 @@ export default function CreateBucket() {
                         />
                         <div onClick={(e) => {
                             allowedFileTypeArray.push(allowedFileTypes)
-                            {
-                                console.log("allowed file types", allowedFileTypes)
-                            }
-                            {
-                                console.log("allowed file types", allowedFileTypeArray)
-                            }
                             setAllowedFileTypes("")
                         }}><Button>Add</Button></div>
 

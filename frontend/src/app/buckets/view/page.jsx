@@ -17,7 +17,7 @@ export default function ObjectDetails() {
                 {/* Header */}
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                        <h1 className="text-xl font-semibold">AWSIAM.jpg</h1>
+                        <h1 className="text-xl font-semibold">amplify-demoapp-staging-15911-deployment</h1>
                         {/*<Info className="h-4 w-4 text-muted-foreground" />*/}
                     </div>
                     <div className="flex items-center gap-2">
@@ -53,13 +53,13 @@ export default function ObjectDetails() {
                 <Tabs defaultValue="properties">
                     <TabsList>
                         <TabsTrigger value="properties">Properties</TabsTrigger>
-                        <TabsTrigger value="permissions">Permissions</TabsTrigger>
+                        <TabsTrigger value="policies">Policies</TabsTrigger>
                     </TabsList>
 
                     <TabsContent value="properties" className="space-y-6">
-                        {/* Object Overview */}
+                        {/* Bucket Overview */}
                         <div className="space-y-4">
-                            <h2 className="text-lg font-semibold">Object overview</h2>
+                            <h2 className="text-lg font-semibold">Bucket overview</h2>
                             <div className="grid grid-cols-2 gap-x-8 gap-y-4">
                                 <div>
                                     <div className="space-y-4">
@@ -133,9 +133,10 @@ export default function ObjectDetails() {
                         </div>
                     </TabsContent>
 
-                    <TabsContent value="permissions">
+                    <TabsContent value="policies">
                         {/* Permissions content would go here */}
                     </TabsContent>
+
                 </Tabs>
             </div>
         </div>

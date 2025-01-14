@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
-import { ArrowUpDown, Info, RotateCcw, Copy, Trash2 } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import {useState} from 'react'
+import {ArrowUpDown, Info, RotateCcw, Copy, Trash2} from 'lucide-react'
+import {Button} from "@/components/ui/button"
+import {Input} from "@/components/ui/input"
 import {
     Table,
     TableBody,
@@ -12,9 +12,9 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import { Checkbox } from "@/components/ui/checkbox"
+import {Checkbox} from "@/components/ui/checkbox"
 import {useDispatch, useSelector} from "react-redux";
-
+import Link from "next/link";
 
 
 export default function BucketInterface() {
@@ -59,7 +59,9 @@ export default function BucketInterface() {
                             <Trash2 className="h-4 w-4 mr-2"/>
                             Delete
                         </Button>
-                        <Button size="sm">Create bucket</Button>
+                        <Link href={"/buckets/create"}>
+                            <Button size="sm">Create bucket</Button>
+                        </Link>
                     </div>
                 </div>
 

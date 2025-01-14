@@ -1,23 +1,11 @@
 "use client"
 
 import * as React from "react"
-import {
-    BookOpen,
-    Bot,
-    Command,
-    Frame,
-    LifeBuoy,
-    Map,
-    PieChart,
-    Send,
-    Settings2,
-    SquareTerminal,
-} from "lucide-react"
+import {BookOpen, Bot, Command, LifeBuoy, Send,} from "lucide-react"
 
-import { NavMain } from "@/app/components/nav-main"
-import { NavProjects } from "@/app/components/nav-projects"
-import { NavSecondary } from "@/app/components/nav-secondary"
-import { NavUser } from "@/app/components/nav-user"
+import {NavMain} from "@/app/components/nav-main"
+import {NavSecondary} from "@/app/components/nav-secondary"
+import {NavUser} from "@/app/components/nav-user"
 import {
     Sidebar,
     SidebarContent,
@@ -28,6 +16,8 @@ import {
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import Link from "next/link";
+import { FaBucket } from "react-icons/fa6";
+import { VscJson } from "react-icons/vsc";
 
 const data = {
     user: {
@@ -39,68 +29,19 @@ const data = {
         {
             title: "Buckets",
             url: "/buckets",
-            icon: Bot,
+            icon: FaBucket,
             items: [
                 {
                     title: "Create",
                     url: "/buckets/create",
-                },
-                {
-                    title: "Explorer",
-                    url: "#",
-                },
-                {
-                    title: "Quantum",
-                    url: "#",
                 },
             ],
         },
         {
             title: "Objects",
             url: "/objects",
-            icon: BookOpen,
-            // items: [
-            //     {
-            //         title: "Introduction",
-            //         url: "#",
-            //     },
-            //     {
-            //         title: "Get Started",
-            //         url: "#",
-            //     },
-            //     {
-            //         title: "Tutorials",
-            //         url: "#",
-            //     },
-            //     {
-            //         title: "Changelog",
-            //         url: "#",
-            //     },
-            // ],
-        },
-        {
-            title: "Settings",
-            url: "#",
-            icon: Settings2,
-            items: [
-                {
-                    title: "General",
-                    url: "#",
-                },
-                {
-                    title: "Team",
-                    url: "#",
-                },
-                {
-                    title: "Billing",
-                    url: "#",
-                },
-                {
-                    title: "Limits",
-                    url: "#",
-                },
-            ],
-        },
+            icon: VscJson,
+        }
     ],
     navSecondary: [
         {
@@ -115,21 +56,21 @@ const data = {
         },
     ],
     projects: [
-        {
-            name: "Design Engineering",
-            url: "#",
-            icon: Frame,
-        },
-        {
-            name: "Sales & Marketing",
-            url: "#",
-            icon: PieChart,
-        },
-        {
-            name: "Travel",
-            url: "#",
-            icon: Map,
-        },
+        // {
+        //     name: "Design Engineering",
+        //     url: "#",
+        //     icon: Frame,
+        // },
+        // {
+        //     name: "Sales & Marketing",
+        //     url: "#",
+        //     icon: PieChart,
+        // },
+        // {
+        //     name: "Travel",
+        //     url: "#",
+        //     icon: Map,
+        // },
     ],
 }
 
@@ -158,7 +99,7 @@ export function AppSidebar({ ...props }) {
             </SidebarHeader>
             <SidebarContent>
                 <NavMain items={data.navMain} />
-                <NavProjects projects={data.projects} />
+                {/*<NavProjects projects={data.projects} />*/}
                 <NavSecondary items={data.navSecondary} className="mt-auto" />
             </SidebarContent>
             <SidebarFooter>
