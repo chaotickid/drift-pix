@@ -35,6 +35,10 @@ const data = {
                     title: "Create",
                     url: "/buckets/create",
                 },
+                {
+                    title: "Trash",
+                    url: "/buckets/trash",
+                },
             ],
         },
         {
